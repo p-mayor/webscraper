@@ -25,11 +25,10 @@ def main():
     for i in matchURLS:
         URL_list.append(i.group(0))
     for j in matchEmails:
-        email_list.append(str(j.group(0)).strip('u'))
+        email_list.append(str(j.group(0)))
     
     for k in matchPhones:
-        print(k)
-        phone_list.append(str(k.group(1)+'-'+k.group(2)+'-'+k.group(3)).strip('u'))
+        phone_list.append(str(k.group(1)+'-'+k.group(2)+'-'+k.group(3)))
 
     soup = BeautifulSoup(r.text, 'html.parser')
     for link in soup.find_all('script'):
